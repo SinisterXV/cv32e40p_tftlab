@@ -246,8 +246,8 @@ $(CURDIR)/run/pt:
 pt/generate_gsf: $(GATE_DIR)/cv32e40p_top.gsf
 
 %.gsf.csv: %.gsf
-	@echo "fault_site,max_rise,max_fall"                             > $@
-	@tail $< -n+10 | head -n-3 | awk '{OFS=","}{print $$3,$$1,$$2}' >> $@
+	@echo "fault_site,max_rise,max_fall"                          > $@
+	@tail $< -n+10 | head -n-3 | awk '{OFS=","}{print $3,$1,$2}' >> $@
 	@echo "Generated file: $@"
 
 
