@@ -1,8 +1,10 @@
 # Ignore all run directories
 run/*
 
-# Ignore synthesis directory
+# Ignore synthesis directory and the library file, but keep syn/out
 syn/*
+!syn/out
+*.tlib
 
 # Ignore all backup directories and files
 bak/
