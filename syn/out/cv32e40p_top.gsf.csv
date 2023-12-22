@@ -1,4 +1,4 @@
-max_rise,max_fall,fault_site
+fault_site,max_rise,max_fall
 U4/output,*,*
 U2/output,*,*
 core_i/load_store_unit_i/U517/output,*,*
