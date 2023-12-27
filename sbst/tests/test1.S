@@ -20,11 +20,99 @@ test1:
 	sw s11, 8(sp)
 	addi s0, sp, 112     # set up s0 to point to start of stack frame
 
+########## CODE START ##########
 
-    # You can write your code here 
+	li a0, 0 # will count the number of mismatches while reading
 
-    li a0, 0xCAFECAFE    # return value
+##### WRITE WORDS #####
+	la t0, word_section # word_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to write in all the word cells
+	li t5, 500 # total number of iterations
 
+word_write_loop:
+	slli t3, t1, 2 # current word's offset = iteration << 2
+	sub t4, t0, t3 # compute current iteration address
+	sw t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, word_write_loop # if t1 != 500 then iterate again
+	
+##### WRITE HALF-WORDS #####
+	la t0, halfword_section # halfword_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFF # value to write in all the halfword cells
+
+halfword_write_loop:
+	slli t3, t1, 1 # current word's offset = iteration << 1
+	sub t4, t0, t3 # compute current iteration address
+	sh t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, halfword_write_loop # if t1 != 500 then iterate again
+
+##### WRITE BYTES #####
+	la t0, byte_section # byte_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFF # value to write in all the byte cells
+
+byte_write_loop:
+	sub t4, t0, t1 # compute current iteration address
+	sb t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, byte_write_loop # if t1 != 500 then iterate again
+
+
+
+##### READ WORDS #####
+	la t0, word_section # word_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to read from all the cells, not just the word ones
+
+word_read_loop:
+	slli t3, t1, 2 # current word's offset = iteration << 2
+	sub t4, t0, t3 # compute current iteration address
+	lw t6, 0(t4) # read value from memory
+	beq t6, t2, word_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+word_noerr:
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, word_read_loop # if t1 != 500 then iterate again
+
+##### READ HALF-WORDS #####
+	la t0, halfword_section # halfword_section base address
+	li t1, 0 # iteration counter
+	
+halfword_read_loop:
+	slli t3, t1, 1 # current word's offset = iteration << 1
+	sub t4, t0, t3 # compute current iteration address
+	lh t6, 0(t4) # read value from memory
+	beq t6, t2, halfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+halfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, halfword_read_loop # if t1 != 500 then iterate again
+
+##### READ BYTES #####
+	la t0, byte_section # byte_section base address
+	li t1, 0 # iteration counter
+
+byte_read_loop:
+	sub t4, t0, t1 # compute current iteration address
+	lb t6, 0(t4) # read value from memory
+	beq t6, t2, byte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+byte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, byte_read_loop # if t1 != 500 then iterate again
+
+########## CODE END ##########
 
     # ABI epilogue
 	lw s11, 8(sp)        # restore callee-saved registers
@@ -48,6 +136,12 @@ test1:
 # READ/WRITE VARIABLES
 
 .section .data
+word_section:
+.space 2000 #allocate space for 500 words
+halfword_section:
+.space 1000 # allocate space for 500 half-words
+byte_section:
+.space 500 # allocate 500 byes
 
 # READ-ONLY VARIABLES
 

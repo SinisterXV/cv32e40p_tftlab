@@ -47,6 +47,7 @@ _start:
 	addi a1, sp, __SIZEOF_POINTER__ /* a1 = argv */
 	li a2, 0                        /* a2 = envp = NULL */
 	call main
+	call test1
 	tail exit
 
 .size  _start, .-_start
