@@ -9,7 +9,7 @@ EVCD_TOP	  = tb_top.wrapper_i.top_i
 SDF           = $(GATE_DIR)/$(TOP_LEVEL).sdf
 SDF_TOP       = /wrapper_i/top_i
 
-export TB_CLK_NS     = 10.0
+export TB_CLK_NS     = 6.0
 export SYN_CLK_NS    = 5.0
 
 # --- Flags taken from example_tb/core/Makefile -------------

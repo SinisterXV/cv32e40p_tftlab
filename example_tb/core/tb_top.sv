@@ -28,8 +28,8 @@ module tb_top #(
   // comment to record execution trace
   //`define TRACE_EXECUTION
 
-  const time          CLK_PHASE_HI = 5ns;
-  const time          CLK_PHASE_LO = 5ns;
+  const time          CLK_PHASE_HI = 3ns;
+  const time          CLK_PHASE_LO = 3ns;
   const time          CLK_PERIOD = CLK_PHASE_HI + CLK_PHASE_LO;
 
   const time          STIM_APPLICATION_DEL = CLK_PERIOD * 0.1;
