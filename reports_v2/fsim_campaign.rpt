@@ -1,0 +1,116 @@
+FAULT CAMPAIGN REPORT
+Started on Fri Dec 29 12:01:26 CET 2023
+
+K = 1.0
+Simulation duration: 151s
+Fault coverage: 42.44%
+
+K = 1.1
+Simulation duration: 166s
+Fault coverage: 47.18%
+
+K = 1.2
+Simulation duration: 160s
+Fault coverage: 48.14%
+
+K = 1.3
+Simulation duration: 166s
+Fault coverage: 48.03%
+
+K = 1.4
+Simulation duration: 169s
+Fault coverage: 48.17%
+
+K = 1.5
+Simulation duration: 160s
+Fault coverage: 48.42%
+
+K = 1.6
+Simulation duration: 168s
+Fault coverage: 49.97%
+
+K = 1.7
+Simulation duration: 160s
+Fault coverage: 50.63%
+
+K = 1.8
+Simulation duration: 165s
+Fault coverage: 50.83%
+
+K = 1.9
+Simulation duration: 165s
+Fault coverage: 49.81%
+
+K = 2.0
+Simulation duration: 151s
+Fault coverage: 49.58%
+
+K = 3
+Simulation duration: 167s
+Fault coverage: 51.00%
+
+K = 4
+Simulation duration: 182s
+Fault coverage: 52.00%
+
+K = 5
+Simulation duration: 175s
+Fault coverage: 52.32%
+
+K = 6
+Simulation duration: 181s
+Fault coverage: 52.73%
+
+K = 7
+Simulation duration: 174s
+Fault coverage: 52.57%
+
+K = 8
+Simulation duration: 184s
+Fault coverage: 52.62%
+
+K = 9
+Simulation duration: 167s
+Fault coverage: 52.66%
+
+K = 10
+Simulation duration: 189s
+Fault coverage: 52.66%
+
+K = 20
+Simulation duration: 184s
+Fault coverage: 53.90%
+
+K = 30
+Simulation duration: 187s
+Fault coverage: 54.00%
+
+K = 40
+Simulation duration: 187s
+Fault coverage: 54.47%
+
+K = 50
+Simulation duration: 183s
+Fault coverage: 54.47%
+
+K = 60
+Simulation duration: 190s
+Fault coverage: 54.47%
+
+K = 70
+Simulation duration: 180s
+Fault coverage: 54.50%
+
+K = 80
+Simulation duration: 178s
+Fault coverage: 54.51%
+
+K = 90
+Simulation duration: 200s
+Fault coverage: 54.57%
+
+K = 94
+Simulation duration: 188s
+Fault coverage: 54.59%
+
+Finished execution on Fri Dec 29 13:23:41 CET 2023
