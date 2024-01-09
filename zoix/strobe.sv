@@ -39,8 +39,6 @@ initial begin
                 $fs_strobe(`TOPLEVEL.data_be_o);
                 $fs_strobe(`TOPLEVEL.data_gnt_i);
                 $fs_strobe(`TOPLEVEL.data_rvalid_i);
-                $fs_strobe(`TOPLEVEL.data_err_i);
-                $fs_strobe(`TOPLEVEL.data_err_pmp_i);
                 $fs_strobe(`TOPLEVEL.data_be_o);
                 $fs_strobe(`TOPLEVEL.data_be_o);
                 $fs_strobe(`TOPLEVEL.data_be_o);

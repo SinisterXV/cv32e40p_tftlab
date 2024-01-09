@@ -5,10 +5,10 @@ function perform_fsim_iteration {
 	SECONDS=0 # reset timer
 	make zoix/fsim-timing FAULT_LIST=run/zoix_timing/cv32e40p_top_sdd_K${k}.rpt # run fault sim
 
-	# read line 6147 from the report: it contains the fault coverage
+	# read the second-to-last line of the report: it contains the fault coverage
 	# then isolate the two percentages
 	# then select only the first (they are identical)
-	fault_coverage=$(sed -n '6142p' run/zoix_timing/cv32e40p_top_sdd_K${k}.rpt.fsim | grep -Eo "[0-9.]+%" | head -1)
+	fault_coverage=$(tail -2 run/zoix_timing/cv32e40p_top_sdd_K${k}.rpt.fsim | head -1 | grep -Eo "[0-9.]+%" | head -1)
 	{
 		echo "K = ${k}"
 		echo "Simulation duration: ${SECONDS}s"

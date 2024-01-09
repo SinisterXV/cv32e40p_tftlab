@@ -1,0 +1,564 @@
+.section .text
+.global test1
+.type test1, @function
+
+test1:
+	# ABI prologue
+	addi sp, sp, -112     # allocate 112 bytes on the stack
+	sw ra, 104(sp)        # save return address
+	sw s0, 96(sp)         # save callee-saved registers
+	sw s1, 88(sp)
+	sw s2, 80(sp)
+	sw s3, 72(sp)
+	sw s4, 64(sp)
+	sw s5, 56(sp)
+	sw s6, 48(sp)
+	sw s7, 40(sp)
+	sw s8, 32(sp)
+	sw s9, 24(sp)
+	sw s10, 16(sp)
+	sw s11, 8(sp)
+	addi s0, sp, 112     # set up s0 to point to start of stack frame
+
+########## CODE START ##########
+
+	li a0, 0xABCDEF0
+	li a0, 0 # will count the number of mismatches while reading
+	li t5, 10 # total number of iterations for all tests
+
+##### WRITE WORDS #####
+	la t0, word_section # word_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to write in all the word cells
+
+word_write_loop:
+	slli t3, t1, 2 # current word's offset = iteration << 2
+	add t4, t0, t3 # compute current iteration address
+	sw t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, word_write_loop # if t1 != 10 then iterate again
+
+##### WRITE WORDS WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_word_section # reg_imm_postinc_word_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to write in all the word cells
+
+reg_imm_word_write_loop:
+	p.sw t2, 4(t0!) # write value to memory, then increment address using immediate
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_word_write_loop # if t1 != 10 then iterate again
+
+##### WRITE WORDS WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_word_section # reg_reg_postinc_word_section base address
+	li t1, 0 # iteration counter
+	li t6, 4 # offset to increment the base address with
+	li t2, 0xFFFFFFFF # value to write in all the word cells
+
+reg_reg_postinc_word_write_loop:
+	p.sw t2, t6(t0!) # write value to memory, then increment address using register
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_word_write_loop # if t1 != 10 then iterate again
+
+##### WRITE WORDS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_word_section # reg_reg_word_section base address
+	li t1, 0 # iteration counter
+	li t6, 0 # offset to add to the base address
+	li t2, 0xFFFFFFFF # value to write in all the word cells
+
+reg_reg_word_write_loop:
+	p.sw t2, t6(t0) # write value to memory by adding offset to base address
+	addi t6, t6, 4 # increment offset
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_word_write_loop # if t1 != 10 then iterate again
+	
+
+
+##### WRITE HALF-WORDS #####
+	la t0, halfword_section # halfword_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFF # value to write in all the halfword cells
+
+halfword_write_loop:
+	slli t3, t1, 1 # current word's offset = iteration << 1
+	add t4, t0, t3 # compute current iteration address
+	sh t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, halfword_write_loop # if t1 != 10 then iterate again
+
+##### WRITE HALF-WORDS WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_halfword_section # reg_imm_postinc_halfword_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFF # value to write in all the halfword cells
+
+reg_imm_halfword_write_loop:
+	p.sw t2, 2(t0!) # write value to memory, then increment address using immediate
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_halfword_write_loop # if t1 != 10 then iterate again
+
+##### WRITE HALF-WORDS WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_halfword_section # reg_reg_postinc_halfword_section base address
+	li t1, 0 # iteration counter
+	li t6, 2 # offset to increment the base address with
+	li t2, 0xFFFF # value to write in all the halfword cells
+
+reg_reg_postinc_halfword_write_loop:
+	p.sw t2, t6(t0!) # write value to memory, then increment address using register
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_halfword_write_loop # if t1 != 10 then iterate again
+
+##### WRITE HALF-WORDS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_halfword_section # reg_reg_halfword_section base address
+	li t1, 0 # iteration counter
+	li t6, 0 # offset to add to the base address
+	li t2, 0xFFFF # value to write in all the halfword cells
+
+reg_reg_halfword_write_loop:
+	p.sw t2, t6(t0) # write value to memory by adding offset to base address
+	addi t6, t6, 2 # increment offset
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_halfword_write_loop # if t1 != 10 then iterate again
+
+
+
+##### WRITE BYTES #####
+	la t0, byte_section # byte_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFF # value to write in all the byte cells
+
+byte_write_loop:
+	add t4, t0, t1 # compute current iteration address
+	sb t2, 0(t4) # write value to memory
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, byte_write_loop # if t1 != 10 then iterate again
+
+##### WRITE BYTES WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_byte_section # reg_imm_postinc_byte_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFF # value to write in all the byte cells
+
+reg_imm_byte_write_loop:
+	p.sw t2, 1(t0!) # write value to memory, then increment address using immediate
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_byte_write_loop # if t1 != 10 then iterate again
+
+##### WRITE BYTES WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_word_section # reg_reg_postinc_word_section base address
+	li t1, 0 # iteration counter
+	li t6, 1 # offset to increment the base address with
+	li t2, 0xFF # value to write in all the word cells
+
+reg_reg_postinc_byte_write_loop:
+	p.sw t2, t6(t0!) # write value to memory, then increment address using register
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_byte_write_loop # if t1 != 10 then iterate again
+
+##### WRITE BYTES WITH REGISTER-REGISTER #####
+	la t0, reg_reg_byte_section # reg_reg_byte_section base address
+	li t1, 0 # iteration counter
+	li t3, 0 # offset to add to the base address
+	li t2, 0xFF # value to write in all the word cells
+
+reg_reg_byte_write_loop:
+	p.sw t2, t3(t0) # write value to memory by adding offset to base address
+	addi t3, t3, 1 # increment offset
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_byte_write_loop # if t1 != 10 then iterate again
+
+
+
+
+
+##### READ WORDS #####
+	la t0, word_section # word_section base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to read from the word cells
+
+word_read_loop:
+	slli t3, t1, 2 # current word's offset = iteration << 2
+	add t4, t0, t3 # compute current iteration address
+	lw t6, 0(t4) # read value from memory
+	beq t6, t2, word_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+word_noerr:
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, word_read_loop # if t1 != 10 then iterate again
+
+##### READ WORDS WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_word_section # base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to read from the cells
+
+reg_imm_postinc_word_read_loop:
+	p.lw t6, 4(t0!) # read value from memory
+	beq t6, t2, reg_imm_postinc_word_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_imm_postinc_word_noerr:
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_postinc_word_read_loop # if t1 != 10 then iterate again
+
+##### READ WORDS WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_word_section # base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to read from the cells
+	li t3, 4 # offset to increment the base address with
+
+reg_reg_postinc_word_read_loop:
+	p.lw t6, t3(t0!) # read value from memory
+	beq t6, t2, reg_reg_postinc_word_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_postinc_word_noerr:
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_word_read_loop # if t1 != 10 then iterate again
+
+##### READ WORDS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_word_section # base address
+	li t1, 0 # iteration counter
+	li t2, 0xFFFFFFFF # value to read from the cells
+	li t3, 0 # offset to add to the base address
+
+reg_reg_word_read_loop:
+	p.lw t6, t3(t0) # read value from memory
+	addi t3, t3, 4
+	beq t6, t2, reg_reg_word_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_word_noerr:
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_word_read_loop # if t1 != 10 then iterate again
+	
+
+##### READ HALF-WORDS #####
+	la t0, halfword_section # halfword_section base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+halfword_read_loop:
+	slli t3, t1, 1 # current word's offset = iteration << 1
+	add t4, t0, t3 # compute current iteration address
+	lh t6, 0(t4) # read value from memory
+	beq t6, t2, halfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+halfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, halfword_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED HALF-WORDS #####
+	la t0, halfword_section # halfword_section base address
+	li t2, 0xFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+uhalfword_read_loop:
+	slli t3, t1, 1 # current word's offset = iteration << 1
+	add t4, t0, t3 # compute current iteration address
+	lhu t6, 0(t4) # read value from memory
+	beq t6, t2, uhalfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+uhalfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, uhalfword_read_loop # if t1 != 10 then iterate again
+
+##### READ HALF-WORDS WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_halfword_section # halfword_section base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+reg_imm_postinc_halfword_read_loop:
+	p.lh t6, 2(t0!) # read value from memory
+	beq t6, t2, reg_imm_postinc_halfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_imm_postinc_halfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_postinc_halfword_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED HALF-WORDS WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_halfword_section # halfword_section base address
+	li t2, 0xFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+reg_imm_postinc_uhalfword_read_loop:
+	p.lhu t6, 2(t0!) # read value from memory
+	beq t6, t2, reg_imm_postinc_uhalfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_imm_postinc_uhalfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_postinc_uhalfword_read_loop # if t1 != 10 then iterate again
+
+##### READ HALF-WORDS WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_halfword_section # halfword_section base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t3, 2 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_postinc_halfword_read_loop:
+	p.lh t6, t3(t0!) # read value from memory
+	beq t6, t2, reg_reg_postinc_halfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_postinc_halfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_halfword_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED HALF-WORDS WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_halfword_section # halfword_section base address
+	li t2, 0xFFFF # value to be read from the cells
+	li t3, 2 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_postinc_uhalfword_read_loop:
+	p.lhu t6, t3(t0!) # read value from memory
+	beq t6, t2, reg_reg_postinc_uhalfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_postinc_uhalfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_uhalfword_read_loop # if t1 != 10 then iterate again
+
+##### READ HALF-WORDS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_halfword_section # halfword_section base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t3, 0 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_halfword_read_loop:
+	p.lh t6, t3(t0) # read value from memory
+	addi t3, t3, 2 # increment offset
+	beq t6, t2, reg_reg_halfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_halfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_halfword_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED HALF-WORDS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_halfword_section # halfword_section base address
+	li t2, 0xFFFF # value to be read from the cells
+	li t3, 0 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_uhalfword_read_loop:
+	p.lhu t6, t3(t0) # read value from memory
+	addi t3, t3, 2 # increment offset
+	beq t6, t2, reg_reg_uhalfword_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_uhalfword_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_uhalfword_read_loop # if t1 != 10 then iterate again
+
+
+
+
+##### READ BYTES #####
+	la t0, byte_section # byte_section base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+
+byte_read_loop:
+	add t4, t0, t1 # compute current iteration address
+	lb t6, 0(t4) # read value from memory
+	beq t6, t2, byte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+byte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, byte_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED BYTES #####
+	la t0, byte_section # base address
+	li t2, 0xFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+ubyte_read_loop:
+	add t4, t0, t1 # compute current iteration address
+	lbu t6, 0(t4) # read value from memory
+	beq t6, t2, ubyte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+ubyte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, ubyte_read_loop # if t1 != 10 then iterate again
+
+##### READ BYTES WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_byte_section # base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+reg_imm_postinc_byte_read_loop:
+	p.lb t6, 1(t0!) # read value from memory
+	beq t6, t2, reg_imm_postinc_byte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_imm_postinc_byte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_postinc_byte_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED BYTES WITH REGISTER-IMMEDIATE WITH POST-INCREMENT #####
+	la t0, reg_imm_postinc_byte_section # base address
+	li t2, 0xFF # value to be read from the cells
+	li t1, 0 # iteration counter
+	
+reg_imm_postinc_ubyte_read_loop:
+	p.lhu t6, 1(t0!) # read value from memory
+	beq t6, t2, reg_imm_postinc_ubyte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_imm_postinc_ubyte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_imm_postinc_ubyte_read_loop # if t1 != 10 then iterate again
+
+##### READ BYTES WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_byte_section # base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t3, 1 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_postinc_byte_read_loop:
+	p.lh t6, t3(t0!) # read value from memory
+	beq t6, t2, reg_reg_postinc_byte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_postinc_byte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_byte_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED BYTES WITH REGISTER-REGISTER WITH POST-INCREMENT #####
+	la t0, reg_reg_postinc_halfword_section # base address
+	li t2, 0xFF # value to be read from the cells
+	li t3, 1 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_postinc_ubyte_read_loop:
+	p.lhu t6, t3(t0!) # read value from memory
+	beq t6, t2, reg_reg_postinc_ubyte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_postinc_ubyte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_postinc_ubyte_read_loop # if t1 != 10 then iterate again
+
+##### READ BYTES WITH REGISTER-REGISTER #####
+	la t0, reg_reg_byte_section # base address
+	li t2, 0xFFFFFFFF # value to be read from the cells
+	li t3, 0 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_byte_read_loop:
+	p.lh t6, t3(t0) # read value from memory
+	addi t3, t3, 1 # increment offset
+	beq t6, t2, reg_reg_byte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_byte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_byte_read_loop # if t1 != 10 then iterate again
+
+##### READ UNSIGNED BYTESS WITH REGISTER-REGISTER #####
+	la t0, reg_reg_byte_section # base address
+	li t2, 0xFF # value to be read from the cells
+	li t3, 0 # offset to increment the base address with
+	li t1, 0 # iteration counter
+	
+reg_reg_ubyte_read_loop:
+	p.lhu t6, t3(t0) # read value from memory
+	addi t3, t3, 1 # increment offset
+	beq t6, t2, reg_reg_ubyte_noerr # if read value == expected one, don't increment the error counter
+
+	addi a0, a0, 1 # increment error counter
+
+reg_reg_ubyte_noerr:
+
+	addi t1, t1, 1  # increase iteration counter
+	bne t1, t5, reg_reg_ubyte_read_loop # if t1 != 10 then iterate again
+
+########## CODE END ##########
+
+    # ABI epilogue
+	lw s11, 8(sp)        # restore callee-saved registers
+	lw s10, 16(sp)
+	lw s9, 24(sp)
+	lw s8, 32(sp)
+	lw s7, 40(sp)
+	lw s6, 48(sp)
+	lw s5, 56(sp)
+	lw s4, 64(sp)
+	lw s3, 72(sp)
+	lw s2, 80(sp)
+	lw s1, 88(sp)
+	lw s0, 96(sp)
+	lw ra, 104(sp)       # restore return address
+	addi sp, sp, 112     # deallocate stack space
+	jr ra                # return to caller
+
+# READ DATA SECTION
+
+.section .data
+# allocate space for 10 words, for all store-word instructions
+word_section:
+.space 40
+reg_imm_postinc_word_section:
+.space 40
+reg_reg_postinc_word_section:
+.space 40
+reg_reg_word_section:
+.space 40
+
+# allocate space for 10 half-words, for all store-halfword instructions
+halfword_section:
+.space 20
+reg_imm_postinc_halfword_section:
+.space 20
+reg_reg_postinc_halfword_section:
+.space 20
+reg_reg_halfword_section:
+.space 20
+
+# allocate 10 byes, for all store-byte instructions
+byte_section:
+.space 10
+reg_imm_postinc_byte_section:
+.space 10
+reg_reg_postinc_byte_section:
+.space 10
+reg_reg_byte_section:
+.space 10
