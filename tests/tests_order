@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# FILEPATH: /home/s317703/assignment/tests/tests_order
+
+# Declare an array to store the filenames
+filenames=(
+    "test1_40.S"
+    "test1_49_singlewriteloop.S"
+    "test1_52_miswrite.S"
+    "test1_miswrite_read_misread.S"
+    "test1_miswriteread.S"
+)
+
+# Access the filenames in the array
+mv ../sbst/tests/test1.S ../.tmp/test1.S 
+for filename in "${filenames[@]}"; do
+   cp "$filename" ../sbst/tests/test1.S 
+   cd ..
+   mkdir reports
+   make questa/lsim/gate-timing/shell
+   wait
+    ./run_fsim_campaign.sh 
+    wait
+    mv ./reports ./result/reports_${filename:0:-2}
+   cd tests
+done
+mv ../.tmp/test1.S ../sbst/tests/test1.S 
+
