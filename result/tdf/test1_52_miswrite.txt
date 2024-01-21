@@ -1,0 +1,60 @@
+Version("1.1")
+Date("01/20/24 16:41:02")
+User("s317703")
+Tool("FMGR")
+Info("  Type:    Fault Coverage Report")
+Info("  Version: T-2022.06-SP2 (64-bit, Nov 15 2022)")
+Info("  Models:  All")
+Info("  Classes: All")
+
+FunctionalBlocks{
+     1 design {
+           1  sbst 0ps {F:6088 ND:1635 DD:3874 PD:2 NC:192 NO:323 NS:62}
+    }
+}
+
+FaultInfo{
+    FubNum;
+    TestNum;
+    Attempts;
+    NumPot;
+}
+
+FaultList{
+
+Total             ND             DD           PD            NC            NO           NS Scope
+----- -------------- -------------- ------------ ------------- ------------- ------------ -----
+ 6088 1635  (26.86%) 3874  (63.63%)  2   (0.03%) 192   (3.15%) 323   (5.31%) 62   (1.02%) cv32e40p_top
+ 6088 1635  (26.86%) 3874  (63.63%)  2   (0.03%) 192   (3.15%) 323   (5.31%) 62   (1.02%) -core_i
+ 6088 1635  (26.86%) 3874  (63.63%)  2   (0.03%) 192   (3.15%) 323   (5.31%) 62   (1.02%) --load_store_unit_i (862 hidden instances, 6088 faults)
+}
+#------------------------------------------------------------------------------
+# Faults listed:       Prime: 0        Total: 0
+#------------------------------------------------------------------------------
+# Fault Coverage Summary
+#
+#                                        Prime             Total
+#------------------------------------------------------------------------------
+# Total Faults:                           6088              6088
+#
+# Dropped Detected                 DD     3874  63.63%      3874  63.63%
+# Dropped Potential                PD        2   0.03%         2   0.03%
+# Not Detected                     ND     1635  26.86%      1635  26.86%
+# Not Strobed                      NS       62   1.02%        62   1.02%
+# Not Observed                     NO      323   5.31%       323   5.31%
+# Not Controlled                   NC      192   3.15%       192   3.15%
+#
+# Faults not detected yet:
+#   Not simulated yet:                     577   9.48%       577   9.48%
+#   Simulated 1 to 5 times:               1637  26.89%      1637  26.89%
+#   Simulated 6 to 10 times:                 0   0.00%         0   0.00%
+#   Simulated > 10 times:                    0   0.00%         0   0.00%
+#
+# Faults potentially detected:
+#   Possible 1 to 5 times:                   2   0.03%         2   0.03%
+#   Possible 6 to 10 times:                  0   0.00%         0   0.00%
+#   Possible > 10 times:                     0   0.00%         0   0.00%
+#
+# Test Coverage                                 63.65%            63.65%
+# Fault Coverage                                63.65%            63.65%
+#------------------------------------------------------------------------------

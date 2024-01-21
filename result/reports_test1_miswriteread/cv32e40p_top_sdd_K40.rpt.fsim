@@ -1,5 +1,5 @@
 Version("1.1")
-Date("01/19/24 21:53:35")
+Date("01/20/24 18:15:55")
 User("s317703")
 Tool("FMGR")
 Info("  Type:    Fault Coverage Report")
@@ -9,7 +9,7 @@ Info("  Classes: All")
 
 FunctionalBlocks{
      1 design {
-           1  sbst 0ps {F:4392 ND:1412 DD:2880 PD:13 NC:4 NO:23 NS:60}
+           1  sbst 0ps {F:4392 ND:1434 DD:2867 PD:4 NC:4 NO:23 NS:60}
     }
 }
 
@@ -146,7 +146,7 @@ FaultList{
     <  1    1    1    0> DD R (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U155.ZN"}
     <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U351.ZN"}
     <  1    1    1    0> DD R (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U351.ZN"}
-    <  0    0    1    0> ND F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U355.ZN"}
+    <  1    1    1    0> DD F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U355.ZN"}
     <  1    1    1    0> DD R (71600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U355.ZN"}
     <  1    1    1    0> DD F (170ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U739.ZN"}
     <  1    1    1    0> DD R (171600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U739.ZN"}
@@ -283,7 +283,7 @@ FaultList{
     <  0    0    1    0> ND F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U319.A2"}
     <  0    0    1    0> ND R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U319.A2"}
     <  1    1    1    0> DD F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U319.ZN"}
-    <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U319.ZN"}
+    <  0    0    1    0> ND R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U319.ZN"}
     <  1    1    1    0> DD F (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U128.A1"}
     <  1    1    1    0> DD R (234400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U128.A1"}
     <  1    1    1    0> DD F (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U128.A2"}
@@ -297,7 +297,7 @@ FaultList{
     <  1    1    1    0> DD F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U321.ZN"}
     <  1    1    1    0> DD R (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U321.ZN"}
     <  1    1    1    0> DD F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.A1"}
-    <  1    1    1    0> DD R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.A1"}
+    <  0    0    1    0> ND R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.A1"}
     <  1    1    1    0> DD F (80400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.A2"}
     <  1    1    1    0> DD R (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.A2"}
     <  1    1    1    0> DD F (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U322.ZN"}
@@ -333,7 +333,7 @@ FaultList{
     <  1    1    1    0> DD F (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U352.ZN"}
     <  1    1    1    0> DD R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U352.ZN"}
     <  0    0    1    0> ND F (82800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U356.ZN"}
-    <  1    1    1    0> DD R (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U356.ZN"}
+    <  0    0    1    0> ND R (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U356.ZN"}
     <  1    1    1    0> DD F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U360.ZN"}
     <  1    1    1    0> DD R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U360.ZN"}
     <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U366.A1"}
@@ -526,7 +526,7 @@ FaultList{
     <  1    1    1    0> DD R (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U160.A2"}
     <  1    1    1    0> DD F (225200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U160.ZN"}
     <  1    1    1    0> DD R (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U160.ZN"}
-    <  1    1    1    1> PD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U353.ZN"}
+    <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U353.ZN"}
     <  1    1    1    0> DD R (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U353.ZN"}
     <  1    1    1    0> DD F (218ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U165.A1"}
     <  1    1    1    0> DD R (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U165.A1"}
@@ -579,7 +579,7 @@ FaultList{
     <  0    0    1    0> ND F (69200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U367.A2"}
     <  1    1    1    0> DD R (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U367.A2"}
     <  1    1    1    0> DD F (70800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U367.ZN"}
-    <  1    1    1    0> DD R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U367.ZN"}
+    <  0    0    1    0> ND R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U367.ZN"}
     <  1    1    1    0> DD F (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U368.ZN"}
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U368.ZN"}
     <  1    1    1    0> DD F (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U177.A1"}
@@ -750,7 +750,7 @@ FaultList{
     <  1    1    1    0> DD R (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U475.ZN"}
     <  0    0    1    0> ND F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.A1"}
     <  1    1    1    0> DD R (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.A2"}
     <  1    1    1    0> DD R (61200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.B1"}
     <  0    0    1    0> ND R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U479.B1"}
@@ -867,7 +867,7 @@ FaultList{
     <  1    1    1    0> DD F (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U139.ZN"}
     <  1    1    1    0> DD R (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U139.ZN"}
     <  1    1    1    0> DD F (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.A1"}
-    <  1    1    1    0> DD R (78ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.A1"}
+    <  0    0    1    0> ND R (78ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.A1"}
     <  1    1    1    0> DD F (66ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.A2"}
     <  1    1    1    0> DD R (66ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.A2"}
     <  1    1    1    0> DD F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U330.ZN"}
@@ -884,7 +884,7 @@ FaultList{
     <  1    1    1    0> DD R (66ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.A2"}
     <  0    0    1    0> ND F (78ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.B1"}
     <  0    0    1    0> ND R (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.B1"}
-    <  1    1    1    0> DD F (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.B2"}
+    <  1    1    1    1> PD F (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.B2"}
     <  0    0    1    0> ND R (221200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.B2"}
     <  1    1    1    0> DD F (221200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.ZN"}
     <  1    1    1    0> DD R (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U332.ZN"}
@@ -901,9 +901,9 @@ FaultList{
     <  1    1    1    0> DD F (226800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U144.ZN"}
     <  1    1    1    0> DD R (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U144.ZN"}
     <  1    1    1    0> DD F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A1"}
-    <  1    1    1    0> DD R (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A1"}
+    <  0    0    1    0> ND R (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A1"}
     <  1    1    1    0> DD F (67200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A2"}
-    <  1    1    1    0> DD R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A2"}
+    <  0    0    1    0> ND R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.A2"}
     <  1    1    1    0> DD F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.ZN"}
     <  1    1    1    0> DD R (226800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U337.ZN"}
     <  0    0    1    0> ND F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U338.B1"}
@@ -918,7 +918,7 @@ FaultList{
     <  1    1    1    0> DD R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.A2"}
     <  0    0    1    0> ND F (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.B1"}
     <  0    0    1    0> ND R (78ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.B1"}
-    <  1    1    1    0> DD F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.B2"}
+    <  1    1    1    1> PD F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.B2"}
     <  0    0    1    0> ND R (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.B2"}
     <  1    1    1    0> DD F (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.ZN"}
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U339.ZN"}
@@ -945,9 +945,9 @@ FaultList{
     <  1    1    1    0> DD F (226ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U153.ZN"}
     <  1    1    1    0> DD R (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U153.ZN"}
     <  1    1    1    0> DD F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A1"}
-    <  1    1    1    0> DD R (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A1"}
+    <  0    0    1    0> ND R (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A1"}
     <  1    1    1    0> DD F (67200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A2"}
-    <  1    1    1    0> DD R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A2"}
+    <  0    0    1    0> ND R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.A2"}
     <  1    1    1    0> DD F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.ZN"}
     <  1    1    1    0> DD R (226800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U345.ZN"}
     <  1    1    1    0> DD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U154.A1"}
@@ -994,7 +994,7 @@ FaultList{
     <  1    1    1    0> DD R (216800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U166.ZN"}
     <  0    0    1    0> ND F (228ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.B1"}
     <  0    0    1    0> ND R (232800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.B1"}
-    <  1    1    1    1> PD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.B2"}
+    <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.B2"}
     <  0    0    1    0> ND R (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.B2"}
     <  1    1    1    0> DD F (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.ZN"}
     <  1    1    1    0> DD R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U358.ZN"}
@@ -1005,10 +1005,10 @@ FaultList{
     <  1    1    1    0> DD F (218ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U167.ZN"}
     <  1    1    1    0> DD R (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U167.ZN"}
     <  0    0    1    0> ND F (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.A1"}
-    <  1    1    1    0> DD R (76800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.A1"}
+    <  0    0    1    0> ND R (76800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.A1"}
     <  1    1    1    0> DD F (69200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.A2"}
     <  0    0    1    0> ND R (62800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.A2"}
-    <  1    1    1    0> DD F (76800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.ZN"}
+    <  0    0    1    0> ND F (76800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.ZN"}
     <  1    1    1    0> DD R (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U359.ZN"}
     <  1    1    1    0> DD F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U170.ZN"}
     <  1    1    1    0> DD R (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U170.ZN"}
@@ -1018,12 +1018,12 @@ FaultList{
     <  1    1    1    0> DD R (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U171.A2"}
     <  1    1    1    0> DD F (225200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U171.ZN"}
     <  1    1    1    0> DD R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U171.ZN"}
-    <  1    1    1    1> PD F (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.A1"}
+    <  0    0    1    0> ND F (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.A1"}
     <  0    0    1    0> ND R (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.A1"}
     <  0    0    1    0> ND F (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.A2"}
     <  0    0    1    0> ND R (215200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.A2"}
     <  0    0    1    0> ND F (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.ZN"}
-    <  1    1    1    1> PD R (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.ZN"}
+    <  0    0    1    0> ND R (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U364.ZN"}
     <  0    0    1    0> ND F (208800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U749.ZN"}
     <  0    0    1    0> ND R (209600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U749.ZN"}
     <  1    1    1    0> DD F (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U174.ZN"}
@@ -1162,7 +1162,7 @@ FaultList{
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.A1"}
     <  0    0    1    0> ND F (68ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.A2"}
     <  1    1    1    0> DD R (64ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.A2"}
-    <  1    1    1    1> PD F (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.B1"}
+    <  0    0    1    0> ND F (78800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.B1"}
     <  0    0    1    0> ND R (78ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.B1"}
     <  0    0    1    0> ND F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.B2"}
     <  0    0    1    0> ND R (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U405.B2"}
@@ -1220,7 +1220,7 @@ FaultList{
     <  1    1    1    0> DD R (234400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U437.ZN"}
     <  0    0    1    0> ND F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.A1"}
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.A2"}
     <  1    1    1    0> DD R (62ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.B1"}
     <  1    1    1    0> DD R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U440.B1"}
@@ -1276,7 +1276,7 @@ FaultList{
     <  1    1    1    0> DD R (234400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U450.ZN"}
     <  0    0    1    0> ND F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.A1"}
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.A2"}
     <  1    1    1    0> DD R (62ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.B1"}
     <  0    0    1    0> ND R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U452.B1"}
@@ -1288,7 +1288,7 @@ FaultList{
     <  1    1    1    0> DD R (234400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U453.ZN"}
     <  0    0    1    0> ND F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.A1"}
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.A2"}
     <  1    1    1    0> DD R (62ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.B1"}
     <  0    0    1    0> ND R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U455.B1"}
@@ -1312,7 +1312,7 @@ FaultList{
     <  1    1    1    0> DD R (234400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U459.ZN"}
     <  0    0    1    0> ND F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.A1"}
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.A2"}
     <  1    1    1    0> DD R (62ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.B1"}
     <  0    0    1    0> ND R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U461.B1"}
@@ -1326,7 +1326,7 @@ FaultList{
     <  1    1    1    0> DD R (178ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U272.ZN"}
     <  0    0    1    0> ND F (76400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.A1"}
     <  1    1    1    0> DD R (75200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.A1"}
-    <  1    1    1    0> DD F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.A2"}
+    <  0    0    1    0> ND F (64800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.A2"}
     <  1    1    1    0> DD R (62ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.A2"}
     <  0    0    1    0> ND F (74400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.B1"}
     <  1    1    1    0> DD R (72800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U464.B1"}
@@ -1480,7 +1480,7 @@ FaultList{
     <  1    1    1    0> DD R (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U378.B2"}
     <  1    1    1    0> DD F (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U378.ZN"}
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U378.ZN"}
-    <  1    1    1    1> PD F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U385.A1"}
+    <  0    0    1    0> ND F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U385.A1"}
     <  0    0    1    0> ND R (228ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U385.A1"}
     <  0    0    1    0> ND F (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U385.A2"}
     <  0    0    1    0> ND R (225200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U385.A2"}
@@ -1492,7 +1492,7 @@ FaultList{
     <  1    1    1    0> DD R (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U391.B2"}
     <  1    1    1    0> DD F (218800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U391.ZN"}
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U391.ZN"}
-    <  1    1    1    1> PD F (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U399.A1"}
+    <  0    0    1    0> ND F (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U399.A1"}
     <  0    0    1    0> ND R (228ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U399.A1"}
     <  0    0    1    0> ND F (219600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U399.A2"}
     <  0    0    1    0> ND R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U399.A2"}
@@ -1738,7 +1738,7 @@ FaultList{
     <  0    0    0    0> NC R (167200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.cnt_q_reg_1_.Q"}
     <  0    0    0    0> NS F (40ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.cnt_q_reg_1_.QN"}
     <  0    0    0    0> NS R (40ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.cnt_q_reg_1_.QN"}
-    <  1    1    1    1> PD F (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U327.A1"}
+    <  0    0    1    0> ND F (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U327.A1"}
     <  0    0    1    0> ND R (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U327.A1"}
     <  0    0    1    0> ND F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U327.A2"}
     <  0    0    1    0> ND R (226ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U327.A2"}
@@ -1758,7 +1758,7 @@ FaultList{
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U523.ZN"}
     <  1    1    1    0> DD F (231600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U140.ZN"}
     <  1    1    1    0> DD R (235600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U140.ZN"}
-    <  1    1    1    1> PD F (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.A1"}
+    <  0    0    1    0> ND F (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.A1"}
     <  0    0    1    0> ND R (216ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.A1"}
     <  0    0    1    0> ND F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.A2"}
     <  0    0    1    0> ND R (226ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.A2"}
@@ -1768,7 +1768,7 @@ FaultList{
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.B2"}
     <  1    1    1    0> DD F (226ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.ZN"}
     <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U335.ZN"}
-    <  1    1    1    1> PD F (215200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U342.A1"}
+    <  0    0    1    0> ND F (215200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U342.A1"}
     <  0    0    1    0> ND R (216800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U342.A1"}
     <  0    0    1    0> ND F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U342.A2"}
     <  0    0    1    0> ND R (226800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U342.A2"}
@@ -1802,7 +1802,7 @@ FaultList{
     <  0    0    1    0> ND R (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U379.B2"}
     <  1    1    1    0> DD F (229200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U379.ZN"}
     <  1    1    1    0> DD R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U379.ZN"}
-    <  1    1    1    1> PD F (215200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U387.A1"}
+    <  0    0    1    0> ND F (215200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U387.A1"}
     <  0    0    1    0> ND R (218ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U387.A1"}
     <  0    0    1    0> ND F (222400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U387.A2"}
     <  0    0    1    0> ND R (228ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U387.A2"}
@@ -1932,7 +1932,7 @@ FaultList{
     <  1    1    1    0> DD R (170ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U665.A2"}
     <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U665.ZN"}
     <  1    1    1    0> DD R (188ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U665.ZN"}
-    <  1    1    1    0> DD F (186800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U669.A1"}
+    <  0    0    1    0> ND F (186800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U669.A1"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U669.A1"}
     <  1    1    1    0> DD F (169200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U669.A2"}
     <  1    1    1    0> DD R (170ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U669.A2"}
@@ -2022,7 +2022,7 @@ FaultList{
     <  1    1    1    0> DD R (188ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U699.ZN"}
     <  1    1    1    0> DD F (183600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U501.ZN"}
     <  1    1    1    0> DD R (185600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U501.ZN"}
-    <  0    0    1    0> ND F (184800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U507.A1"}
+    <  1    1    1    0> DD F (184800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U507.A1"}
     <  1    1    1    0> DD R (188ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U507.A1"}
     <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U507.A2"}
     <  1    1    1    0> DD R (192800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U507.A2"}
@@ -2066,7 +2066,7 @@ FaultList{
     <  1    1    1    0> DD R (188ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U712.ZN"}
     <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U521.ZN"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U521.ZN"}
-    <  0    0    1    0> ND F (186800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U524.A1"}
+    <  1    1    1    0> DD F (186800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U524.A1"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U524.A1"}
     <  1    1    1    0> DD F (169200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U524.A2"}
     <  1    1    1    0> DD R (170ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U524.A2"}
@@ -2942,7 +2942,7 @@ FaultList{
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U114.A2"}
     <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U114.ZN"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U114.ZN"}
-    <  1    1    1    0> DD F (97600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U307.A1"}
+    <  0    0    1    0> ND F (97600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U307.A1"}
     <  0    0    1    0> ND R (94400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U307.A1"}
     <  0    0    1    0> ND F (116800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U307.A2"}
     <  0    0    1    0> ND R (116800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U307.A2"}
@@ -2994,7 +2994,7 @@ FaultList{
     <  1    1    1    0> DD R (186800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U710.A2"}
     <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U710.ZN"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U710.ZN"}
-    <  0    0    1    0> ND F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U520.A1"}
+    <  1    1    1    0> DD F (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U520.A1"}
     <  1    1    1    0> DD R (188ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U520.A1"}
     <  1    1    1    0> DD F (190800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U520.A2"}
     <  1    1    1    0> DD R (191600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U520.A2"}
@@ -3663,10 +3663,10 @@ FaultList{
     <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.A2"}
     <  0    0    1    0> ND R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.A2"}
     <  0    0    1    0> ND F (49600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B1"}
-    <  0    0    1    0> ND R (49600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B1"}
+    <  1    1    1    0> DD R (49600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B1"}
     <  0    0    1    0> ND F (225200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B2"}
-    <  0    0    1    0> ND R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B2"}
-    <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.ZN"}
+    <  1    1    1    0> DD R (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.B2"}
+    <  1    1    1    0> DD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.ZN"}
     <  0    0    1    0> ND R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U796.ZN"}
     <  0    0    1    0> ND F (206ns) {PORT "cv32e40p_top.core_i.load_store_unit_i.U798.A1"}
     <  0    0    1    0> ND R (205200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U798.A1"}
@@ -3974,7 +3974,7 @@ FaultList{
     <  0    0    1    0> ND R (209600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.C1"}
     <  0    0    1    0> ND F (223600ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.C2"}
     <  0    0    1    0> ND R (222800ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.C2"}
-    <  0    0    1    0> ND F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.A"}
+    <  1    1    1    0> DD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.A"}
     <  0    0    1    0> ND R (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.A"}
     <  1    1    1    0> DD F (231200ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.B"}
     <  0    0    1    0> ND R (230400ps) {PORT "cv32e40p_top.core_i.load_store_unit_i.U797.B"}
@@ -4424,24 +4424,24 @@ FaultList{
 #------------------------------------------------------------------------------
 # Total Faults:                           4392              4392
 #
-# Dropped Detected                 DD     2880  65.57%      2880  65.57%
-# Dropped Potential                PD       13   0.30%        13   0.30%
-# Not Detected                     ND     1412  32.15%      1412  32.15%
+# Dropped Detected                 DD     2867  65.28%      2867  65.28%
+# Dropped Potential                PD        4   0.09%         4   0.09%
+# Not Detected                     ND     1434  32.65%      1434  32.65%
 # Not Strobed                      NS       60   1.37%        60   1.37%
 # Not Observed                     NO       23   0.52%        23   0.52%
 # Not Controlled                   NC        4   0.09%         4   0.09%
 #
 # Faults not detected yet:
 #   Not simulated yet:                      87   1.98%        87   1.98%
-#   Simulated 1 to 5 times:               1425  32.45%      1425  32.45%
+#   Simulated 1 to 5 times:               1438  32.74%      1438  32.74%
 #   Simulated 6 to 10 times:                 0   0.00%         0   0.00%
 #   Simulated > 10 times:                    0   0.00%         0   0.00%
 #
 # Faults potentially detected:
-#   Possible 1 to 5 times:                  13   0.30%        13   0.30%
+#   Possible 1 to 5 times:                   4   0.09%         4   0.09%
 #   Possible 6 to 10 times:                  0   0.00%         0   0.00%
 #   Possible > 10 times:                     0   0.00%         0   0.00%
 #
-# Test Coverage                                 65.72%            65.72%
-# Fault Coverage                                65.72%            65.72%
+# Test Coverage                                 65.32%            65.32%
+# Fault Coverage                                65.32%            65.32%
 #------------------------------------------------------------------------------
