@@ -77,13 +77,6 @@ read_loop:
 	addi a0, a0, 1 # increment error counter
 
 word_noerr:
-## misaligned reading
-	lw t6, 0(t4) # read value from memory
-	lw t6, 3(t4) # read value from memory
-	lw t6, 2(t4) # read value from memory
-	lw t6, 1(t4) # read value from memory
-
-
 
 ##### READ HALF-WORDS #####
 	la t0, halfword_section # halfword_section base address
@@ -101,13 +94,7 @@ uhalfword_noerr:
 	beq t6, t2, halfword_noerr # if read value == expected one, don't increment the error counter
 	addi a0, a0, 1 # increment error counter
 halfword_noerr:
-	lhu t6, 2(t4) # read value from memory
-	lh t6, 3(t4) # read value from memory
-	lhu t6, 3(t4) # read value from memory
-	lh t6, 1(t4) # read value from memory
-	lhu t6, 1(t4) # read value from memory
-	lh t6, 2(t4) # read value from memory
-
+	
 ##### READ BYTES #####
 	la t0, byte_section # byte_section base address
 	add t4, t0, t1 # compute current iteration address
@@ -122,17 +109,12 @@ ubyte_noerr:
 	beq t6, t2, byte_noerr # if read value == expected one, don't increment the error counter
 	addi a0, a0, 1 # increment error counter
 byte_noerr:	
-	lbu t6, 1(t4) # read value from memory
-	lb t6, 3(t4) # read value from memory
-	lbu t6, 3(t4) # read value from memory
-	lb t6, 2(t4) # read value from memory
-	lbu t6, 2(t4) # read value from memory
-	lb t6, 1(t4) # read value from memory
+
 
 	addi t1, t1, 1 # increase iteration counter
 	bne t1, t5, read_loop # if t1 != t5 then iterate again
 
-la a7, patterns
+	la a7, patterns
 	addi t5, a7, 20
 
 misaligned_read:
@@ -158,6 +140,7 @@ misaligned_read:
 	lw t2, 1(a7) 
 	addi a7, a7, 1
 	blt a7, t5, misaligned_read 
+	
 
 ########## CODE END ##########
 
@@ -179,14 +162,13 @@ misaligned_read:
 	jr ra                # return to caller
 
 # READ DATA SECTION
-
-.section .data
+ .data
 patterns:
-.long 0xFFFF0000
-.long 0xAAAAAAAA
-.long 0xDEADBEEF
-.long 0xCAFEEFAC
-.long 0xBECAECAF
+.word 0xFFFF0000
+.word 0x0FF0FF0F
+.word 0xA55AA55A
+.word 0x3AFE5FAC
+.word 0xBECAECAF
 
 # allocate space for 50 words
 word_section:
@@ -203,5 +185,6 @@ byte_section:
 
 .section .rodata
 ro_patterns:
-.long 0x00000000
-.long 0xFFFFFFFF
+.word 0x00000000
+.word 0xFFFFFFFF
+

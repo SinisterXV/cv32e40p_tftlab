@@ -1,0 +1,15 @@
+test1_40.S
+\n
+# EXIT SUCCESS cc:       1076
+test1_49_singlewriteloop.S
+\n
+# EXIT SUCCESS cc:        989
+test1_52_miswrite.S
+\n
+# EXIT SUCCESS cc:       1257
+test1_miswrite_read_misread.S
+\n
+# EXIT SUCCESS cc:       1600
+test1_miswriteread.S
+\n
+# EXIT SUCCESS cc:       1250
