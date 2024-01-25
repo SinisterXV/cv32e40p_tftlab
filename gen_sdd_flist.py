@@ -83,7 +83,7 @@ with open(GSF_CSV) as source, open(SDD_RPT, 'w') as dest:
             slack = S
         else:   # K
             slack = TB_CLK_NS - max_delay
-            if M and slack > M:
+            if M and max_delay > M:
                 continue
             slack *= K
 

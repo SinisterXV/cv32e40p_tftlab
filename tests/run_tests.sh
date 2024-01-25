@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# FILEPATH: /home/s317703/assignment/tests/tests_order
+# FILEPATH: /home/s317703/assignment/tests/run_tests.sh
 
 # Declare an array to store the filenames
 filenames=(

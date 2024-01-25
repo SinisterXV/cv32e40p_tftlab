@@ -1,0 +1,227 @@
+
+sbst/sbst.elf:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00000000 l    d  .vectors	00000000 .vectors
+00000180 l    d  .init	00000000 .init
+000001d0 l    d  .text	00000000 .text
+00002048 l    d  .rodata	00000000 .rodata
+00002130 l    d  .data	00000000 .data
+00002ad8 l    d  .sdata	00000000 .sdata
+00002af0 l    d  .sbss	00000000 .sbss
+00002afc l    d  .bss	00000000 .bss
+00002b28 l    d  .heap	00000000 .heap
+00003b30 l    d  .stack	00000000 .stack
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .Pulp_Chip.Info	00000000 .Pulp_Chip.Info
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 /tmp/cc7c2jr8.o
+00000000 l       .vectors	00000000 vector_table
+00000374 l       .text	00000000 sw_irq_handler
+00000364 l       .text	00000000 __no_irq_handler
+000003ec l       .text	00000000 verification_irq_handler
+00002100 l       .rodata	00000000 no_exception_handler_msg
+000003bc l       .text	00000000 handle_illegal_insn
+0000039c l       .text	00000000 handle_ecall
+000003ac l       .text	00000000 handle_ebreak
+000003cc l       .text	00000000 handle_unknown
+0000209a l       .rodata	00000000 ecall_msg
+000003dc l       .text	00000000 end_handler
+000020bb l       .rodata	00000000 ebreak_msg
+0000206b l       .rodata	00000000 illegal_insn_msg
+000020dd l       .rodata	00000000 unknown_msg
+00000000 l    df *ABS*	00000000 main.c
+00000000 l    df *ABS*	00000000 syscalls.c
+00002adc l     O .sdata	00000004 brk
+00000000 l    df *ABS*	00000000 /tmp/ccSlEYoO.o
+00002130 l       .data	00000000 patterns
+00002144 l       .data	00000000 word_section
+0000220c l       .data	00000000 halfword_section
+00002270 l       .data	00000000 byte_section
+00000438 l       .text	00000000 write_loop
+00000484 l       .text	00000000 read_loop
+000004a2 l       .text	00000000 word_noerr
+000004c4 l       .text	00000000 uhalfword_noerr
+000004d2 l       .text	00000000 halfword_noerr
+000004ec l       .text	00000000 ubyte_noerr
+000004fa l       .text	00000000 byte_noerr
+00002128 l       .rodata	00000000 end
+00000510 l       .text	00000000 misaligned_read
+00002120 l       .rodata	00000000 ro_patterns
+00000000 l    df *ABS*	00000000 atexit.c
+00000000 l    df *ABS*	00000000 exit.c
+00000000 l    df *ABS*	00000000 fini.c
+00000000 l    df *ABS*	00000000 impure.c
+000022a8 l     O .data	00000428 impure_data
+00000000 l    df *ABS*	00000000 init.c
+00000000 l    df *ABS*	00000000 puts.c
+00000000 l    df *ABS*	00000000 reent.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 __atexit.c
+00000000 l    df *ABS*	00000000 __call_atexit.c
+00000000 l    df *ABS*	00000000 findfp.c
+00000932 l     F .text	00000004 __fp_lock
+00000942 l     F .text	00000064 std.isra.0
+000009aa l     F .text	00000004 __fp_unlock
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 fvwrite.c
+00000000 l    df *ABS*	00000000 fwalk.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 memchr.c
+00000000 l    df *ABS*	00000000 memcpy.c
+00000000 l    df *ABS*	00000000 memmove.c
+00000000 l    df *ABS*	00000000 mlock.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 sbrkr.c
+00000000 l    df *ABS*	00000000 stdio.c
+00000000 l    df *ABS*	00000000 writer.c
+00000000 l    df *ABS*	00000000 wsetup.c
+00000000 l    df *ABS*	00000000 closer.c
+00000000 l    df *ABS*	00000000 fclose.c
+00000000 l    df *ABS*	00000000 fflush.c
+00000000 l    df *ABS*	00000000 lseekr.c
+00000000 l    df *ABS*	00000000 makebuf.c
+00000000 l    df *ABS*	00000000 readr.c
+00000000 l    df *ABS*	00000000 fstatr.c
+00000000 l    df *ABS*	00000000 isattyr.c
+00000000 l    df *ABS*	00000000 
+00002130 l       .data	00000000 __fini_array_end
+00002130 l       .data	00000000 __fini_array_start
+00002130 l       .data	00000000 __init_array_end
+00002130 l       .data	00000000 __preinit_array_end
+00002130 l       .data	00000000 __init_array_start
+00002130 l       .data	00000000 __preinit_array_start
+0000201c g     F .text	0000002c _isatty_r
+0000075c g     F .text	00000020 cleanup_glue
+00000284 g     F .text	00000004 _getpid
+000006e4 g     F .text	00000070 _puts_r
+00001e8c g     F .text	00000030 _lseek_r
+000002ee g     F .text	0000000c _utime
+00002930 g       *ABS*	00000000 __global_pointer$
+ffffffff g       *ABS*	00000000 pulp__L2
+00001ae2 g     F .text	00000030 __sseek
+00000000 g       .vectors	00000000 __vector_start
+000009fa g     F .text	00000048 __sinit
+ffffffff g       *ABS*	00000000 pulp__PE
+000009ae g     F .text	00000046 __sfmoreglue
+000016a4 g     F .text	00000002 __malloc_unlock
+00001664 g     F .text	0000003e memmove
+000009f4 g     F .text	00000006 _cleanup
+00001fee g     F .text	0000002e _fstat_r
+00002b24 g     O .bss	00000004 errno
+00001a90 g     F .text	00000004 __seofread
+00001000 g       *ABS*	00000000 __stack_size
+00000180 g       *ABS*	00000000 __boot_address
+00002ad8 g       .sdata	00000000 __SDATA_BEGIN__
+000002dc g     F .text	00000004 _sysconf
+000015a6 g     F .text	000000be memcpy
+00000936 g     F .text	0000000c _cleanup_r
+0000026c g     F .text	0000000c _ftime
+00000754 g     F .text	00000008 puts
+00000294 g     F .text	00000008 isatty
+00002af8 g     O .sbss	00000004 __malloc_top_pad
+00000d5a g     F .text	000002d8 __sfvwrite_r
+00001a34 g     F .text	0000002c _sbrk_r
+00001fbe g     F .text	00000030 _read_r
+00001c52 g     F .text	0000008c _fclose_r
+00001e72 g     F .text	0000001a fflush
+00002af4 g     O .sbss	00000004 __malloc_max_sbrked_mem
+000003f0 g     F .text	00000000 test1
+000002b0 g     F .text	00000004 lseek
+00002ae0 g     O .sdata	00000004 _global_impure_ptr
+000016a6 g     F .text	0000038e _realloc_r
+000005dc g     F .text	00000060 __libc_init_array
+00002b28 g       .bss	00000000 __bss_end
+000002c0 g     F .text	00000004 _open
+00000ae8 g     F .text	0000000e __fp_lock_all
+000001ce g     F .init	fffffffc _init
+00000596 g     F .text	00000046 __libc_fini_array
+000002e0 g     F .text	00000004 _times
+0000077c g     F .text	00000094 _reclaim_reent
+000001ec g     F .text	0000000c nanosleep
+00000304 g     F .text	00000026 write
+00000258 g     F .text	00000008 fstat
+000002d4 g     F .text	00000008 _stat
+00001000 g       *ABS*	00000000 __heap_size
+00000204 g     F .text	0000000c _chdir
+00000ae0 g     F .text	00000002 __sfp_lock_acquire
+0000158c g     F .text	0000001a memchr
+00000bbc g     F .text	0000019e _free_r
+00000888 g     F .text	000000aa __call_exitprocs
+00004b30 g       .stack	00000000 _sp
+00002ae8 g     O .sdata	00000004 __malloc_sbrk_base
+00000180 g     F .init	0000004e _start
+000002fa g     F .text	0000000a _wait
+000002d0 g     F .text	00000004 read
+00002ad8 g     O .sdata	00000004 GOLDEN_SIGNATURES
+00000828 g     F .text	00000060 __register_exitproc
+00002afc g     O .bss	00000028 __malloc_current_mallinfo
+00000260 g     F .text	0000000c _fstatat
+00001c26 g     F .text	0000002c _close_r
+00001b4e g     F .text	000000d8 __swsetup_r
+00000a48 g     F .text	00000098 __sfp
+00002b28 g       .bss	00000000 __BSS_END__
+000026d0 g     O .data	00000408 __malloc_av_
+00000ae6 g     F .text	00000002 __sinit_lock_release
+00001a60 g     F .text	00000030 __sread
+0000032a g     F .text	00000008 _brk
+000016a2 g     F .text	00000002 __malloc_lock
+00000332 g     F .text	00000032 sbrk
+00001e42 g     F .text	00000030 _fflush_r
+00002af0 g       .sbss	00000000 __bss_start
+0000063c g     F .text	000000a8 memset
+000001d0 g     F .text	00000004 main
+000002a6 g     F .text	0000000a _link
+00002af0 g     O .sbss	00000004 __malloc_max_total_mem
+00001b18 g     F .text	00000006 __sclose
+00001cde g     F .text	00000008 fclose
+0000021c g     F .text	0000000c _chown
+000001f8 g     F .text	0000000c _access
+00001100 g     F .text	0000048c _malloc_r
+00001032 g     F .text	00000062 _fwalk
+00000b04 g     F .text	000000b8 _malloc_trim_r
+00003b28 g       .heap	00000000 __heap_end
+000002c4 g     F .text	0000000c _openat
+000001ce g     F .init	fffffffc _fini
+0000022c g     F .text	0000000a _execve
+000001d4 g     F .text	00000018 unimplemented_syscall
+00000572 g     F .text	0000000a atexit
+00000210 g     F .text	0000000c _chmod
+00001b1e g     F .text	00000030 _write_r
+00002ae4 g     O .sdata	00000004 _impure_ptr
+000002b4 g     F .text	0000000c _lstat
+00001ce6 g     F .text	0000015c __sflush_r
+00000af6 g     F .text	0000000e __fp_unlock_all
+000002e4 g     F .text	0000000a _unlink
+00002b28 g       .heap	00000000 __heap_start
+0000024e g     F .text	0000000a _fork
+00001ebc g     F .text	00000064 __swhatbuf_r
+00000278 g     F .text	0000000c _getcwd
+00002130 g       .data	00000000 __DATA_BEGIN__
+00002af0 g       .sdata	00000000 _edata
+00002b28 g       .bss	00000000 _end
+ffffffff g       *ABS*	00000000 pulp__FC
+00001a94 g     F .text	0000004e __swrite
+00002aec g     O .sdata	00000004 __malloc_trim_threshold
+0000057c g     F .text	0000001a exit
+00001094 g     F .text	0000006c _fwalk_reent
+0000029c g     F .text	0000000a _kill
+00000ae2 g     F .text	00000002 __sfp_lock_release
+00000288 g     F .text	0000000c _gettimeofday
+00000236 g     F .text	0000000c _exit
+00001f20 g     F .text	0000009e __smakebuf_r
+ffffffff g       *ABS*	00000000 pulp__L1CL
+00000816 g     F .text	00000012 strlen
+00000228 g     F .text	00000004 close
+00000242 g     F .text	0000000c _faccessat
+ffffffff g       *ABS*	00000000 pulp__L1FC
+00000ae4 g     F .text	00000002 __sinit_lock_acquire
+
+

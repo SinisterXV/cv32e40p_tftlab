@@ -124,6 +124,14 @@ module tb_top #(
     end
   end
 
+always_ff @(posedge clk, negedge rst_n) begin
+      if (~rst_n) begin
+        cycle_cnt_q <= 0;
+      end else begin
+        cycle_cnt_q <= cycle_cnt_q + 1;
+      end
+  end
+
   // check if we succeded
   always_ff @(posedge clk, negedge rst_n) begin
     if (tests_passed) begin
@@ -135,7 +143,7 @@ module tb_top #(
       $finish;
     end
     if (exit_valid) begin
-      if (exit_value == 0) $display("EXIT SUCCESS");
+      if (exit_value == 0) $display("EXIT SUCCESS cc: %d", cycle_cnt_q);
       else $display("EXIT FAILURE: %d", exit_value);
       $finish;
     end

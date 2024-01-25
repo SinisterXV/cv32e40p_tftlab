@@ -160,11 +160,11 @@ lw t3, 2(a7)
 
 .section .data
 patterns:
-.long 0xFFFF0000
-.long 0xAAAAAAAA
-.long 0xDEADBEEF
-.long 0xCAFEEFAC
-.long 0xBECAECAF
+.word 0xFFFF0000
+.word 0x0FF0FF0F
+.word 0xA55AA55A
+.word 0x3AFE5FAC
+.word 0xBECAECAF
 
 # allocate space for 50 words
 word_section:
