@@ -4,14 +4,15 @@
 
 # Declare an array to store the filenames
 filenames=(
-    "test1_40.S"
-    "test1_49_singlewriteloop.S"
-    "test1_52_miswrite.S"
-    "test1_miswrite_read_misread.S"
-    "test1_miswriteread.S"
+    "test1_first.S"
+    "test1_second.S"
+    "test1_third.S"
+    "test1_fourth.S"
+    "test1_fifth.S"
 )
 
 # Access the filenames in the array
+mkdir ../.tmp
 mv ../sbst/tests/test1.S ../.tmp/test1.S 
 for filename in "${filenames[@]}"; do
    cp "$filename" ../sbst/tests/test1.S 
